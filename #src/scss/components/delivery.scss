@@ -1,0 +1,49 @@
+.delivery {
+    @include flex;
+    @include flex-all-center;
+    position: relative;
+    min-height: 700px;
+    // height: 100vh;
+    padding: 150px;
+    &__back {
+        position: fixed;
+    width: 100vw;
+    height: 100%;
+    background-image: url('../img/hero/back.webp');
+    background-size: cover;
+    z-index: -1;
+    }
+
+    &__container {
+        @include flex-col;
+        @include flex-v-center;
+        max-width: 760px;
+        padding: 80px 86px;
+        background-color: $colorWhite;
+    }
+
+    &__title {
+        margin-bottom: 31px;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    &__content-devide {
+        max-width: 50px;
+        width: 100%;
+        height: 3px;
+        margin-bottom: 31px;
+        background-color: $colorGreen;
+    }
+
+    &__list {
+        color: black;
+        list-style: initial;
+    }
+
+    &__item {
+        font-size: 18px;
+        line-height: 38px;
+        font-weight: 300;
+    }
+}

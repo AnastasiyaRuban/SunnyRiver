@@ -1,0 +1,78 @@
+.products {
+  width: 100vw;
+  padding: 85px 100px;
+  background-color: $colorWhite;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+&__category {
+  @include flex-col;
+  margin-bottom: 25px;
+}
+
+ 
+}
+.category__cards  {
+   @include flex-v-center;
+   flex-wrap: wrap;
+   gap: calc(50% - 450px);
+  }
+.category__title {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 35px; 
+  font-weight: 500;
+}
+
+
+.card {
+  width: 300px;
+  min-height: 300px;
+  margin-bottom: 40px;
+  @include flex-col;
+
+  &__image {
+    margin-bottom: 20px;
+  }
+  &__content {
+
+  }
+  &__title {
+
+  }
+  &__price {
+    font-size: 25px;
+    font-weight: 500;
+    color: $colorGreen;
+
+  }
+  &__buttons {
+   @include flex-all-sb;
+   gap: 20px
+
+  }
+  &__button-more {
+    padding: 15px 15px;
+    width: 100%;
+    min-width: 81px;
+    border: 2px solid $colorGreen;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+
+  }
+  &__button-add{
+    padding: 15px 15px;
+    width: 100%;
+    min-width: 81px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    color: $colorWhite;
+    border: 2px solid $colorMain;
+    background-color: $colorMain;
+  }
+}

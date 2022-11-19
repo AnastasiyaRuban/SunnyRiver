@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunnyRiver</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/media.min.css">
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script> -->
+  <script defer src="js/script.js"></script>
+</head>
+<body >
+  <header id="header" class="header">
+      <!-- <div class="header__menu"> -->
+      <a href="#" class="logo header__logo"></a>
+        <!-- <button class="button-reset burger">
+          <span class="burger__line"></span>
+        </button> -->
+      <nav class="nav header__nav">
+        <ul class="nav__list list-reset">
+          <li class="nav__item"><a href="#" class="link-reset nav__link">ГЛАВНАЯ</a></li>
+          <li class="nav__item"><button class="button-reset nav__link">ПРОДУКТЫ</button></li>
+          <li class="nav__item"><a href="#delivery" class="link-reset nav__link">ДОСТАВКА</a></li>
+          <li class="nav__item"><a href="#contacts" class="link-reset nav__link">КОНТАКТЫ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__feedback">
+        <a href="tel:+79213149711" class="link-reset header__tel"> +7 921 314 97 11</a>
+      
+      <div class="header__social social">
+        <a href="https://vk.com/1sunnyriver" class="link-reset social__link social__vk">
+          <svg>
+            <use xlink:href="img/icons/icons.svg#vk"></use>
+          </svg>
+        </a>
+      </div>
+      <button class="header__consultation button-reset">Консультация</button>
+      </div>
+
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero__back"></div>
+      <div class="hero__content">
+        <h1 class="hero__title title">-SunnyRiver-</h1>
+      <p class="hero__description description">Порадуйте себя и&nbsp;своих близких удобной мебелью из&nbsp;натурального дерева, которую с&nbsp;любовью для вас сделали наши мастера</p>
+      <a class="hero__button-more link-reset">ПОДРОБНЕЕ О НАС</a>
+      </div>
+      
+    </section>
+       <section id="about" class="about-us">
+        <div class="about-us__content">
+          <h2 class="about-us__title title">У&nbsp;нас собственное производство в&nbsp;Ленинградской области.</h2>
+          <span class="about-us__content-devide"></span>
+          <p class="about-us__description description">Делаем мебель на&nbsp;заказ по&nbsp;вашим размерам и&nbsp;моделям.</p>
+      </div>
+ </section>
+  <section id="products" class="products">
+      <div class="products__container">
+      </div>
+    </section>
+    <section id="delivery" class="delivery">
+      <div class="delivery__back"></div>
+      <div class="delivery__container">
+        <h2 class="delivery__title title">ДОСТАВКА и ОПЛАТА:</h2>
+        <span class="delivery__content-devide"></span>
+        <ul class="delivery__list list-reset">
+          <li class="delivery__item">Доставка стоит 500&nbsp;руб.</li>
+          <li class="delivery__item">Вы&nbsp;оплачиваете заказ по&nbsp;выставленному счету на&nbsp;юр.лицо, наличными или по&nbsp;карте.</li>
+        </ul>
+      </div>
+    </section>
+    <section id="contacts"  class="contacts">
+      <h2 class="contacts__title title">КОНТАКТЫ:</h2>
+      <p class="contacts__description description">Будем рады Вашему отзыву о нас</p>
+      <div class="contacts__container">
+        <div class="contacts__contacts">
+          <div class="contacts__links">
+            <a href="tel:+79213149711" class="link-reset contacts__tel"> +7 921 314 97 11</a>
+            <a href="mailto: semenova_aa@bk.ru" class="link-reset contacts__email"> semenova_aa@bk.ru</a>
+          </div>
+          <p class="contacts__city">г.Санкт-Петербург</p>
+          <a href="" class="link-reset contacts__social">
+            <svg>
+              <use xlink:href="img/icons/icons.svg#vk"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="contacts__callback callback">
+          <form  action="#" method="POST" enctype="multipart/form-data" class="callback__form">
+            <div class="form-group">
+              <input type="text" name="Имя" class="callback__input input-reset name-input" placeholder="Ваше Имя">
+            </div>
+            <div class="form-group">
+              <input type="mail" name="email" class="callback__input input-reset email-input" placeholder="Ваш e-mail">
+            </div>
+            <textarea  cols="30" rows="10" name="Сообщение" class="callback__textarea input-reset" placeholder="Ваше сообщение"></textarea>
+            <button class="callback__button button-reset">Отправить отзыв</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
