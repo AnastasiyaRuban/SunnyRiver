@@ -2,6 +2,7 @@
   @include flex-all-center;
   width: 100vw;
   min-height: 537px;
+  padding: 0 100px;
   background-color: $colorMain;
   color: $colorWhite;
 
@@ -15,6 +16,7 @@
   }
 
   &__title {
+    text-align: center;
     margin-bottom: 29px;
     font-size: 30px;
     line-height: 37px;
@@ -32,6 +34,7 @@
   }
 
   &__description {
+    text-align: center;
     font-size: 20px;
     line-height: 31px;
     font-weight: 300;

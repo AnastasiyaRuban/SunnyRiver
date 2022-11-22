@@ -186,3 +186,10 @@ const throttle = (func, ms) => { // объявляем функцию throttle �
 		}, ms) // подставляем переданное время в ms
 	}
 }
+
+
+const burger = document.querySelector('.burger')
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active')
+})

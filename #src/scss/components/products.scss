@@ -16,12 +16,11 @@
  
 }
 .category__cards  {
-   @include flex-v-center;
-   flex-wrap: wrap;
-   gap: calc(50% - 450px);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   }
 .category__title {
-  // position: relative;
   text-align: center;
   margin-bottom: 55px;
   font-size: 35px; 
@@ -43,7 +42,7 @@
 
 .card {
   position: relative;
-  width: 300px;
+  max-width: 300px;
   min-height: 300px;
   margin-bottom: 40px;
   @include flex-col;
