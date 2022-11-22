@@ -1,6 +1,7 @@
 const catalog = [
   {
     category: 'КРЕСЛО-ШЕЗЛОНГ',
+    id: 'chaise-longue-chair',
     products: [
       {
         id: 1,
@@ -17,6 +18,7 @@ const catalog = [
   },
   {
     category: 'СТОЛИК',
+    id: 'table',
     products: [
       {
         id: 1,
@@ -82,6 +84,7 @@ const catalog = [
   },
   {
     category: 'ОБЕДЕННЫЙ СТОЛ',
+    id: 'dinner-table',
     products: [
       {
         id: 1,
@@ -107,6 +110,7 @@ const catalog = [
   },
   {
     category: 'ПОДСТАВКА ПОД ЦВЕТЫ',
+    id: 'flower-stand',
     products: [
       {
         id: 1,
@@ -119,6 +123,7 @@ const catalog = [
   },
   {
     category: 'ПОДСТАВКА ДЛЯ БУТЫЛКИ',
+    id: 'stand-for-bottle',
     products: [
       {
         id: 1,

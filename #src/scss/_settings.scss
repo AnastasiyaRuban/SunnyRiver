@@ -83,3 +83,79 @@ body.scroll {
 }
 
 
+.scroll-button {
+  position: fixed;
+  bottom: -100%;
+  right: -100%;
+  animation: pulse 2s infinite;
+}
+
+.scroll-button-show {
+  bottom: 70px;
+  right: 70px;
+}
+
+.promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 45px;
+  padding: 0 80px;
+  background-color: $colorMain;
+
+
+
+  &__description {
+    color: $colorWhite;
+    margin-right: 20px;
+    font-size: 15px;
+    line-height: 1.55;
+    font-weight: 600;
+  }
+
+  &__consultation {
+    padding: 13px 30px;
+    font-size: 14px;
+    color: #05a300;
+    background-color: $colorWhite;
+    font-weight: 700;
+    border-radius: 8px;
+  }
+
+  &__close {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    right: 15px;
+    top: 25%;
+  }
+
+  &__close::after, 
+  &__close::before  {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 15px;
+    left: 0;
+    background-color: $colorWhite;
+  }
+
+  &__close::after {
+    transform: rotate(45deg);
+  }
+  &__close::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.progress {
+  height: 6px;
+  background-color: $colorMain;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  z-index: 99999;
+} 
+		

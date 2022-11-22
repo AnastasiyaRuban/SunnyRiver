@@ -45,6 +45,13 @@
     border: 4px solid $colorMain;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
+
+
+  &__button-more:hover {
+    background-color: $colorMain;
+    color: $colorWhite;
+  } 
 }
 

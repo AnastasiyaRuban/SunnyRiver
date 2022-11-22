@@ -21,14 +21,28 @@
    gap: calc(50% - 450px);
   }
 .category__title {
+  // position: relative;
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 55px;
   font-size: 35px; 
   font-weight: 500;
 }
 
 
+.category__title::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  width: 153px;
+  left: 50%;
+  background-color: $colorGreen;
+  transform: translateY(7px);
+}
+
+
 .card {
+  position: relative;
   width: 300px;
   min-height: 300px;
   margin-bottom: 40px;
@@ -75,4 +89,22 @@
     border: 2px solid $colorMain;
     background-color: $colorMain;
   }
+}
+
+.card.hit::after {
+  content: 'ХИТ';
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: $colorGreen;
+  border-radius: 50%;
+  right: 15px;
+  top: 15px;
+  color: $colorWhite;
+  font-weight: 400;
+  font-size: 12px;
+
 }
