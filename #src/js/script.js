@@ -32,7 +32,7 @@ function createCard(product) {
   cardTitle.textContent = product.name;
   price.textContent = `${product.price} р.`;
   btnMore.textContent = 'ПОДРОБНЕЕ';
-  btnToCard.textContent = 'В КОРЗИНУ';
+  btnToCard.innerHTML = 'В&nbsp;КОРЗИНУ';
 
   cardContent.append(cardTitle, price, btnBlock);
   btnBlock.append(btnMore, btnToCard)
@@ -44,6 +44,7 @@ function createCard(product) {
   return card
 
 }
+
 function createCatalogSection() {
   const sectionContainer = document.querySelector('.products__container');
 
@@ -141,12 +142,12 @@ let links = document.querySelectorAll('a[href^="#"]'),
 })();
 
 
-const promoClose = document.querySelector('.promo__close');
-const promoBlock = document.querySelector('.promo');
+// const promoClose = document.querySelector('.promo__close');
+// const promoBlock = document.querySelector('.promo');
 
-promoClose.addEventListener('click', ()=> {
-  promoBlock.remove()
-})
+// promoClose.addEventListener('click', ()=> {
+//   promoBlock.remove()
+// })
 
 // LOADING
 
@@ -190,6 +191,39 @@ const throttle = (func, ms) => { // объявляем функцию throttle �
 
 const burger = document.querySelector('.burger')
 
-burger.addEventListener('click', () => {
-  burger.classList.toggle('active')
-})
+burger.addEventListener('click', () => burger.classList.toggle('active'))
+
+
+function createPromoBlock() {
+  const promoBlock = document.createElement('div');
+  const promoDescription = document.createElement('p');
+  const promoConsultationButton = document.createElement('button');
+  const promoClose = document.createElement('button');
+
+  promoDescription.innerHTML = 'Не&nbsp;можете определиться? Мы&nbsp;с&nbsp;удовольствием Вас проконсультируем';
+  promoConsultationButton.textContent = 'Консультация';
+
+  promoBlock.classList.add('promo');
+  promoDescription.classList.add('promo__description', 'description');
+  promoConsultationButton.classList.add('promo__consultation', 'button-reset');
+  promoClose.classList.add('promo__close', 'button-reset');
+
+  promoBlock.append(promoDescription, promoConsultationButton, promoClose);
+
+  promoClose.addEventListener('click', ()=> promoBlock.remove());
+  
+
+  if (window.innerWidth > 980) {
+    document.body.append(promoBlock)
+  } else {
+    promoBlock.style.padding = '20px 40px';
+    promoBlock.style.gap = '10px';
+    promoBlock.style.height = 'auto';
+    const aboutUsSection = document.querySelector('.about-us');
+
+    aboutUsSection.before(promoBlock)
+  }
+}
+
+createPromoBlock()
+

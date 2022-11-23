@@ -1,21 +1,23 @@
-// @media (max-width: 1000px) {
-//     .about-us {
-//         &__content {
-//         max-width:640px;
-//         padding: 0;
-//         padding-top: 80px;
-//         padding-bottom: 85px;
-//         }
-// }
-// }
-// @media (max-width: 950px) {
-//   .about-us {
-//     padding-bottom: 62px;
-//     &__photo {
-//       max-height: 569px;
-//     }
-//   }
-// }
+@media (max-width: 768px) {
+    .about-us {
+       padding-top: 40px;
+       padding-bottom: 40px;
+       min-height: 0;
+       &__content {
+        padding: 80px 86px 85px;
+       }
+}
+
+}
+@media (max-width: 640px) {
+  .about-us {
+    padding-left: 20px;
+    padding-right: 20px;
+    &__content {
+        padding: 30px 20px 35px;
+       }
+  }
+}
 
 // @media (max-width: 640px) {
 //   .about-us {
