@@ -1,31 +1,30 @@
- .hero {
+.hero {
   @include flex;
   @include flex-all-center;
   position: relative;
   min-height: 700px;
   height: 100vh;
   padding: 150px;
-  // background-color: $colorDarc;
-
 
   &__back {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-image: url('../img/hero/back.webp');
+    background-image: url("../img/hero/back.webp");
     background-size: cover;
+    background-position: bottom;
     z-index: -1;
   }
 
- &__content {
-  @include flex-col;
-  @include flex-all-center;
-  max-width: 750px;
+  &__content {
+    @include flex-col;
+    @include flex-all-center;
+    max-width: 750px;
   }
 
   &__title {
     margin-bottom: 100px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 72px;
     font-weight: 600;
   }
@@ -48,10 +47,8 @@
     transition: all 0.3s ease-in-out;
   }
 
-
   &__button-more:hover {
     background-color: $colorMain;
     color: $colorWhite;
-  } 
+  }
 }
-

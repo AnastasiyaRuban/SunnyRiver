@@ -9,7 +9,6 @@ html {
 }
 
 img {
-  // height: auto;
   max-width: 100%;
   object-fit: cover;
 }
@@ -41,7 +40,6 @@ body.scroll {
 .link-reset {
   color: inherit;
   text-decoration: none;
-  outline: none;
 }
 
 .button-reset {
@@ -49,7 +47,6 @@ body.scroll {
   margin: 0;
   background: none;
   border: none;
-  outline: none;
   cursor: pointer;
   color: inherit;
 }
@@ -63,7 +60,6 @@ body.scroll {
 .input-reset {
   padding: 0;
   margin: 0;
-  outline: none;
   color: inherit;
   background: none;
   cursor: pointer;
@@ -81,7 +77,6 @@ body.scroll {
   font-size: 48px;
   font-weight: 400;
 }
-
 
 .scroll-button {
   position: fixed;
@@ -105,8 +100,6 @@ body.scroll {
   height: 45px;
   padding: 0 80px;
   background-color: $colorMain;
-
-
 
   &__description {
     color: $colorWhite;
@@ -139,9 +132,9 @@ body.scroll {
     opacity: 0.7;
   }
 
-  &__close::after, 
-  &__close::before  {
-    content: '';
+  &__close::after,
+  &__close::before {
+    content: "";
     position: absolute;
     width: 1px;
     height: 15px;
@@ -166,5 +159,4 @@ body.scroll {
   left: 0;
   transition: 1s;
   z-index: 99999;
-} 
-		
+}

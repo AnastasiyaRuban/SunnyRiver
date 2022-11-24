@@ -1,18 +1,15 @@
 .header {
   position: fixed;
-padding: 8px 40px;
+  padding: 8px 40px;
   top: 0;
   width: 100vw;
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.80);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   z-index: 2000;
   background-color: $colorWhite;
 
-
-
-&__menu {
-    @include flex-all-sb ;
-
-}
+  &__menu {
+    @include flex-all-sb;
+  }
 
   &__logo {
     height: 50px;
@@ -27,8 +24,7 @@ padding: 8px 40px;
     margin-right: 50px;
   }
 
-
-  &__feedback{
+  &__feedback {
     @include flex-v-center;
   }
 
@@ -58,14 +54,13 @@ padding: 8px 40px;
 }
 
 .nav {
-    &__list {
+  &__list {
     @include flex;
   }
 
-  &__item{
+  &__item {
     position: relative;
   }
-
 
   &__item:not(:last-child) {
     margin-right: 30px;
@@ -89,9 +84,9 @@ padding: 8px 40px;
 }
 
 .social {
-  &__link  svg{
+  &__link svg {
     width: 30px;
-    height: 30px; 
+    height: 30px;
     fill: $colorMain;
   }
 }
@@ -102,7 +97,7 @@ padding: 8px 40px;
   padding-right: 15px;
 }
 
-.item-submenu:hover > .item-submenu__list {
+.item-submenu__list {
   color: $colorMain;
 }
 
@@ -111,56 +106,60 @@ padding: 8px 40px;
 }
 
 .item-submenu__button::after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 4px 3px 0 3px;
-    position: absolute;
-    top: 45%;
-    right: 0;
-    border: 3px solid transparent;
-    border-top: 3px solid $colorMain; 
-    transition: all 0.3s ease-in-out;
-}
-
-
-
-.item-submenu:hover > .item-submenu__list,  
-.item-submenu__list:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 3px 0 3px;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  border: 3px solid transparent;
+  border-top: 3px solid $colorMain;
+  transition: all 0.3s ease-in-out;
 }
 
 .item-submenu:hover .item-submenu__button::after {
   transform: rotate(180deg);
   top: 30%;
-  border-top: 3px solid $colorGreen; 
+  border-top: 3px solid $colorGreen;
 }
-
 
 .item-submenu__list {
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
-	position: absolute;
+  position: absolute;
   transition: all 0.5s ease;
   width: max-content;
   padding: 18px 20px;
-	left: -50%;
+  left: -80px;
+  top: 46px;
   display: none;
   background-color: $colorWhite;
   border-radius: 3px;
-    box-shadow: 0px 0px 7px 0px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 7px 0px rgb(0 0 0 / 20%);
 }
 
+.item-submenu__list:hover,
+.item-submenu__list.open {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
 
+.item-submenu__list::before {
+  content: "";
+  position: absolute;
+  left: 45%;
+  top: -20px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid $colorWhite;
+}
 
 .item-submenu__item:not(:last-child) {
   margin-bottom: 12px;
 }
-
 
 .item-submenu__item {
   width: 100%;
@@ -174,11 +173,9 @@ padding: 8px 40px;
   transition: all 0.3s ease-in-out;
 }
 
-
-.item-submenu__item:hover .item-submenu__link{
+.item-submenu__item:hover .item-submenu__link {
   color: $colorGreen;
 }
-
 
 .burger {
   display: none;

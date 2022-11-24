@@ -1,59 +1,23 @@
 @media (max-width: 768px) {
-    .about-us {
-       padding-top: 40px;
-       padding-bottom: 40px;
-       min-height: 0;
-       &__content {
-        padding: 80px 86px 85px;
-       }
-}
+  .about-us {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 0;
+
+    &__content {
+      padding: 80px 86px 85px;
+    }
+  }
 
 }
+
 @media (max-width: 640px) {
   .about-us {
     padding-left: 20px;
     padding-right: 20px;
+
     &__content {
-        padding: 30px 20px 35px;
-       }
+      padding: 30px 20px 35px;
+    }
   }
 }
-
-// @media (max-width: 640px) {
-//   .about-us {
-//     padding-top: 32px;
-//     padding-bottom: 60px;
-
-//     &__content {
-//       grid-template-columns: 100%;
-//       gap: 25px;
-//     }
-
-//     &__description {
-//       font-size: 14px;
-//       line-height: 25px;
-//     }
-
-//     &__photo {
-//       min-height: 278px;
-//       margin-bottom: 23px;
-//     }
-
-//     &__distribution-label {
-//       margin-bottom: 14px;
-//       font-size: 18px;
-//       line-height: 22px;
-//     }
-
-//     &__form-input {
-//       max-width: 100%;
-//       padding: 10px 23px;
-//     }
-
-//     &__form-button {
-//       padding: 9px 20px;
-//       font-size: 14px;
-//       line-height: 16px;
-//     }
-//   }
-// }

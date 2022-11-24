@@ -29,11 +29,10 @@
             // line-height: 72px;
         }
         &__description {
-             margin-bottom: 60px;
+            margin-bottom: 60px;
             line-height: 52px;
         }
     }
-
 }
 
 @media (max-width: 640px) {
@@ -44,15 +43,19 @@
             max-width: 400px;
         }
 
+        &__description {
+            font-size: 25px;
+            line-height: 39px;
+        }
 
-&__description {
-    font-size: 25px;
-    line-height: 39px;
-}
+        &__title {
+            font-size: 43px;
+        }
 
-&__title {
-    font-size: 50px;
-}
-       
+        &__button-more {
+            min-width: 0;
+            width: 242px;
+            font-size: 22px;
+        }
     }
 }

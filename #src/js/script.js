@@ -1,4 +1,3 @@
-@@include('vendor.js')
 @@include('catalog.js')
 
 // GENERAL
@@ -24,6 +23,8 @@ function createCard(product) {
     btnToCard.classList.add('card__button-add', 'button-reset')
 
   image.src = product.image;
+  image.setAttribute('loading', 'lazy')
+  image.alt = product.name.toLowerCase();
 
   if (product. hasOwnProperty('hit')) {
     card.classList.add('hit')
@@ -53,38 +54,34 @@ function createCatalogSection() {
       categoryTitle = document.createElement('h2');
       blockCards = document.createElement('div');
 
-categoryBlock.classList.add('products__category', 'category');
-      categoryTitle.classList.add('category__title', 'title');
-      blockCards.classList.add('category__cards');
+    categoryBlock.classList.add('products__category', 'category');
+    categoryTitle.classList.add('category__title', 'title');
+    blockCards.classList.add('category__cards');
 
-      categoryBlock.id = category.id;
+    categoryBlock.id = category.id;
 
-      categoryTitle.textContent = category.category;
-      categoryBlock.append(categoryTitle)
+    categoryTitle.textContent = category.category;
+    categoryBlock.append(categoryTitle)
 
-      category.products.forEach(product => {
-        const card = createCard(product);
-        blockCards.append(card);
-        
-      })
-      categoryBlock.append(blockCards) ;
+    category.products.forEach(product => {
+      const card = createCard(product);
+      blockCards.append(card);
+    })
+
+    categoryBlock.append(blockCards) ;
 
     sectionContainer.append(categoryBlock)
   })
-
-
 }
-
-
 
 function createProductDropdown() {
   const itemSubmenuButton = document.querySelector('.item-submenu');
-  const submenuList =  document.createElement('ui');
+  const submenuList =  document.createElement('ul');
   submenuList.classList.add('item-submenu__list', 'list-reset');
 
   catalog.forEach(category => {
     const listItem = document.createElement('li'),
-    listLink = document.createElement('a');
+      listLink = document.createElement('a');
 
     listItem.classList.add('item-submenu__item');
     listLink.classList.add('link-reset', 'item-submenu__link');
@@ -96,14 +93,14 @@ function createProductDropdown() {
     submenuList.append(listItem);
   })
   
-itemSubmenuButton.append(submenuList)
+  itemSubmenuButton.append(submenuList);
 
 }
 
 createCatalogSection()
 createProductDropdown()
 
-
+// SCROLL 
 let links = document.querySelectorAll('a[href^="#"]'),
     topOffset = 100;
 
@@ -111,10 +108,11 @@ let links = document.querySelectorAll('a[href^="#"]'),
     item.addEventListener('click', function (e) {
       e.preventDefault();
       let href = this.getAttribute('href').slice(1);
-      const targetElem = document.getElementById(href);
 
-      const elemPosition = targetElem.getBoundingClientRect().top;
-      const offsetPosition = elemPosition - topOffset;
+      const targetElem = document.getElementById(href),
+        elemPosition = targetElem.getBoundingClientRect().top,
+        offsetPosition = elemPosition - topOffset;
+        
       window.scrollBy({
         top: offsetPosition,
         behavior: 'smooth'
@@ -142,52 +140,47 @@ let links = document.querySelectorAll('a[href^="#"]'),
 })();
 
 
-// const promoClose = document.querySelector('.promo__close');
-// const promoBlock = document.querySelector('.promo');
-
-// promoClose.addEventListener('click', ()=> {
-//   promoBlock.remove()
-// })
-
 // LOADING
 
-window.onload = () => { // Страница загружена полностью вместе с изображениями, стилями и тд
+window.onload = () => { 
 
-	const progress = () => { // объявляем основную функцию
+	const progress = () => {
 
-		const line = document.createElement('div') // создаем элемент <div>
-		line.className = 'progress' // назначаем ему класс progress
+		const line = document.createElement('div') 
+		line.className = 'progress'
 		
-		document.body.prepend(line) // вставляем созданный элемент <div> в начало <body>
+		document.body.prepend(line) 
 
-		const progressWidth = () => { // объявляем функцию расчета ширины элемента <div>
+		const progressWidth = () => { 
 			return line.style.width = Math.floor(window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%'
 		}
 
-		progressWidth() // вызываем функцию progressWidth, когда страница загружена, для корректного отображения ширины индикатора прокрутки
+		progressWidth() 
 
-		document.addEventListener('scroll', throttle(progressWidth, 64)) // вызываем функцию при прокрутке
-		window.addEventListener('resize', throttle(progressWidth, 64)) // вызываем функцию при изменения размеров окна
+		document.addEventListener('scroll', throttle(progressWidth, 64))
+		window.addEventListener('resize', throttle(progressWidth, 64)) 
 
 	}
 
-	progress() // вызываем основную функцию
+	progress() 
 
 }
 
-// функция throttle будет ограничивать частоту вызовов функции progressWidth
-const throttle = (func, ms) => { // объявляем функцию throttle и передаем параметры: func - функция, частоту вызовов которой будем ограничивать, ms - время, которое должно пройти между предыдущим и следующим вызовом функции func
-	let locked = false // создаем переменную, которая будет блокировать вызов функции
-	return () => { // при вызове функции throttle, автоматически вызывается анонимная функция, которая будет иметь доступ к переменной isThrottled
-		if (locked) return // если заблокировано, то прекращаем выполнение функции
-		locked = true // следующий вызов функции wrapper блокируется, пока не истечет переданное время в ms
-		setTimeout(() => { // когда истекает переданное время в ms, внутренний код выполняется
-			func() // выполняем переданную функцию func
-			locked = false // снимаем блокировку
-		}, ms) // подставляем переданное время в ms
+
+const throttle = (func, ms) => { 
+	let locked = false 
+	return () => { 
+		if (locked) return 
+		locked = true 
+		setTimeout(() => { 
+			func() 
+			locked = false 
+		}, ms) 
 	}
 }
 
+
+// BURGER 
 
 const burger = document.querySelector('.burger')
 
@@ -195,10 +188,10 @@ burger.addEventListener('click', () => burger.classList.toggle('active'))
 
 
 function createPromoBlock() {
-  const promoBlock = document.createElement('div');
-  const promoDescription = document.createElement('p');
-  const promoConsultationButton = document.createElement('button');
-  const promoClose = document.createElement('button');
+  const promoBlock = document.createElement('div'),
+    promoDescription = document.createElement('p'),
+    promoConsultationButton = document.createElement('button'),
+    promoClose = document.createElement('button');
 
   promoDescription.innerHTML = 'Не&nbsp;можете определиться? Мы&nbsp;с&nbsp;удовольствием Вас проконсультируем';
   promoConsultationButton.textContent = 'Консультация';
@@ -226,4 +219,38 @@ function createPromoBlock() {
 }
 
 createPromoBlock()
+
+
+if (window.innerWidth > 1000) {
+  document.querySelector('.item-submenu').onmouseover = function() {
+  document.querySelector('.item-submenu__list').classList.add('open')
+  
+};
+document.querySelector('.item-submenu').onmouseout = function() {
+  setTimeout(() => {
+    document.querySelector('.item-submenu__list').classList.remove('open')
+  }, 500)
+  
+};
+} else {
+  document.querySelector('.item-submenu__button').addEventListener('click', () => {
+    document.querySelector('.item-submenu__list').classList.toggle('open')
+    document.querySelector('.item-submenu__button').classList.toggle('active')
+  })
+}
+
+
+document.body.addEventListener('click', (e) => {
+  if (
+        !e.target.className.includes('item-submenu')
+        && !e.target.className.includes('item-submenu__button')) {
+     const submenuListOpen = document.querySelector('.item-submenu__list.open')
+     if (submenuListOpen) {
+       document.querySelector('.item-submenu__list').classList.remove('open')
+       document.querySelector('.item-submenu__button').classList.remove('active')
+     }
+  }
+})
+
+
 

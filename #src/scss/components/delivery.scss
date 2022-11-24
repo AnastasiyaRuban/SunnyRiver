@@ -3,15 +3,14 @@
     @include flex-all-center;
     position: relative;
     min-height: 700px;
-    // height: 100vh;
     padding: 150px;
     &__back {
         position: fixed;
-    width: 100vw;
-    height: 100%;
-    background-image: url('../img/hero/back.webp');
-    background-size: cover;
-    z-index: -1;
+        width: 100vw;
+        height: 100%;
+        background-image: url("../img/hero/back.webp");
+        background-size: cover;
+        z-index: -1;
     }
 
     &__container {

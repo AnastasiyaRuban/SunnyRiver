@@ -8,25 +8,22 @@
     margin: 0 auto;
   }
 
-&__category {
-  @include flex-col;
-  margin-bottom: 25px;
+  &__category {
+    @include flex-col;
+    margin-bottom: 25px;
+  }
 }
-
- 
-}
-.category__cards  {
-  display:grid;
+.category__cards {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  }
+}
 .category__title {
   text-align: center;
   margin-bottom: 55px;
-  font-size: 35px; 
+  font-size: 35px;
   font-weight: 500;
 }
-
 
 .category__title::after {
   content: "";
@@ -39,7 +36,6 @@
   transform: translateY(7px);
 }
 
-
 .card {
   position: relative;
   max-width: 300px;
@@ -50,22 +46,15 @@
   &__image {
     margin-bottom: 20px;
   }
-  &__content {
 
-  }
-  &__title {
-
-  }
   &__price {
     font-size: 25px;
     font-weight: 500;
     color: $colorGreen;
-
   }
   &__buttons {
-   @include flex-all-sb;
-   gap: 20px
-
+    @include flex-all-sb;
+    gap: 20px;
   }
   &__button-more {
     padding: 15px 15px;
@@ -75,9 +64,8 @@
     border-radius: 5px;
     font-size: 13px;
     font-weight: 700;
-
   }
-  &__button-add{
+  &__button-add {
     padding: 15px 15px;
     width: 100%;
     min-width: 81px;
@@ -91,7 +79,7 @@
 }
 
 .card.hit::after {
-  content: 'ХИТ';
+  content: "ХИТ";
   position: absolute;
   display: flex;
   align-items: center;
@@ -105,5 +93,4 @@
   color: $colorWhite;
   font-weight: 400;
   font-size: 12px;
-
 }

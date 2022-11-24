@@ -20,17 +20,16 @@
   &__description {
     font-size: 22px;
     line-height: 33px;
-  
   }
 
   &__container {
     @include flex-all-sb;
-   align-items:  flex-start;
-   padding-top: 90px;
-   padding-left: 100px;
-   padding-right: 100px;
-   width: 100%;
-   max-width: 1200px
+    align-items: flex-start;
+    padding-top: 90px;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 100%;
+    max-width: 1200px;
   }
 
   &__contacts {
@@ -45,27 +44,25 @@
     font-weight: 300;
   }
 
- &__city {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 25px;
+  &__city {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
   }
 
-  &__social svg{
+  &__social svg {
     width: 30px;
     height: 30px;
     fill: #64d600;
   }
 
-
+  &__social {
+    width: fit-content;
+  }
 }
 
-
 .callback {
-  // transform: translateY(-6px);
-
   max-width: 460px;
-
 
   &__input {
     height: 58px;
@@ -73,7 +70,6 @@
     padding: 16px 20px;
     margin-bottom: 25px;
     border: 1px solid #c7c7c7;
-    // background-color: #e9e9e9;
 
     &::placeholder {
       font-size: 16px;
@@ -92,7 +88,6 @@
     height: 102px;
     width: 100%;
     padding: 17px 20px;
-    // background-color: #e9e9e9;
     border: 1px solid #c7c7c7;
     &::placeholder {
       font-size: 16px;
@@ -101,24 +96,21 @@
   }
 
   &__button {
-   max-width: 270px;
-   width: 100%;
-   height: 60px;
-   color: $colorWhite;
-   background-color: $colorMain;
-   border-radius: 10px;
-   font-size: 16px;
-   font-weight: 700;
-   transition: all 0.3s ease-in-out;
+    max-width: 270px;
+    width: 100%;
+    height: 60px;
+    color: $colorWhite;
+    background-color: $colorMain;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
   }
-  
+
   &__button:hover {
     background-color: #0bab00;
   }
 }
-
-
-
 
 .form-group {
   position: relative;
